@@ -1,0 +1,232 @@
+* {
+    margin: 0; /* Sab elements ke margin ko 0 karte hain */
+    padding: 0; /* Sab elements ke padding ko 0 karte hain */
+    box-sizing: border-box; /* Box size ko control karte hain */
+}
+
+/* Body ki styling */
+body {
+    font-family: 'Arial', sans-serif; /* Font family set karte hain */
+    background-color: #ffffff; /* Light background color */
+    color: #000000; /* Text ka color black for light mode */
+    transition: background-color 0.3s, color 0.3s; /* Dark mode ke liye smooth transition */
+}
+
+/* Dark mode ke liye styling */
+body.dark-mode {
+    background-color: #212121; /* Dark background for dark mode */
+    color: #ffffff; /* White text for dark mode */
+}
+
+/* Container ka design */
+.container {
+    max-width: 1200px; /* Container ki maximum width */
+    margin: 40px auto; /* Container ko center align karte hain */
+    padding: 40px; /* Padding set karte hain */
+    background-color: #f9f9f9; /* Light background for container */
+    border-radius: 10px; /* Container ke corners ko round karte hain */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    height: 800px; /* Container ki height */
+    width: 80%; /* Container ka width */
+    position: relative; /* Toggle button ko position karne ke liye */
+    transition: background-color 0.3s ease; /* Smooth transition for dark mode */
+}
+
+/* Dark mode container ke liye */
+body.dark-mode .container {
+    background-color: #333333; /* Dark background for container in dark mode */
+}
+
+/* Header ka design */
+header {
+    text-align: center; /* Header ko center align karte hain */
+}
+
+header h1 {
+    color: #ffffff; /* Bright blue for header */
+    font-size: 36px; /* Header text ka size */
+}
+
+header p {
+    color: #c7c7c7; /* Yellow color for description */
+    font-size: 16px; /* Description text ka size */
+}
+
+/* Toggle Button ka design */
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Top-right pe button ko place karte hain */
+    width: 50px;
+    height: 30px;
+    background-color: #ffffff; /* Light mode mein white background */
+    border-radius: 25px;
+    cursor: pointer; /* Button ke hover par pointer cursor */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Sun emoji for light mode */
+.toggle-btn::before {
+    content: '🌞'; /* Sun emoji for light mode */
+    font-size: 18px;
+    color: #3498db; /* Blue color for light mode */
+}
+
+/* Dark mode ke liye toggle button */
+body.dark-mode .toggle-btn {
+    background-color: #03a9f4; /* Blue color for dark mode */
+}
+
+/* Moon emoji for dark mode */
+body.dark-mode .toggle-btn::before {
+    content: '🌙'; /* Moon emoji for dark mode */
+    color: #ffffff; /* White color for dark mode */
+}
+
+/* Hover effect on toggle button */
+.toggle-btn:hover {
+    background-color: #2980b9; /* Darker blue hover effect in light mode */
+}
+
+body.dark-mode .toggle-btn:hover {
+    background-color: #3498db; /* Light blue hover effect in dark mode */
+}
+
+/* Filter buttons ka design */
+.filters {
+    display: flex;
+    justify-content: flex-start; /* Buttons ko left align karte hain */
+    gap: 20px; /* Buttons ke beech space dena */
+    margin-bottom: 20px; /* Bottom margin for filters */
+}
+
+button {
+    padding: 12px 20px; /* Button ki padding */
+    background-color: #3498db; /* Blue color for buttons */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Button thoda zoom karega jab hover ho */
+}
+
+/* Specific button colors for completed tasks */
+button#completed-tasks-btn {
+    background-color: #1eff00f0; /* Green color for completed tasks */
+}
+
+/* Completed tasks button hover effect */
+button#completed-tasks-btn:hover {
+    background-color: #4dc525; /* Dark green hover effect */
+}
+
+/* All tasks button ka color */
+button#all-tasks-btn {
+    background-color: #ff8800; /* Yellow color for all tasks */
+}
+
+/* All tasks button hover effect */
+button#all-tasks-btn:hover {
+    background-color: #c66a00; /* Orange color on hover */
+}
+
+/* Task input aur add task button ki styling */
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+button {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Tasks list styling */
+.tasks-list {
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none; /* List style ko remove karte hain */
+}
+
+li {
+    background-color: #f9f9f9; /* Light background for tasks */
+    padding: 18px;
+    margin: 12px 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Completed tasks ko specific class milegi */
+li.completed {
+    background-color: #39e736; /* Green background for completed tasks */
+    color: #000000; /* White text for completed tasks */
+    text-decoration: line-through; /* Strike-through text for completed tasks */
+}
+
+/* Incomplete tasks ko specific class milegi */
+li.incomplete {
+    color: black;
+    background-color: #ffffff; /* Orange background for incomplete tasks */
+}
+
+/* Hover effect on tasks */
+li:hover {
+    transform: scale(1.02); /* Tasks thoda zoom karega jab hover ho */
+}
+
+/* Footer ka design */
+footer {
+    padding-top: 100px;
+    width: 100%;
+
+    padding-top: 50PX;
+    padding-bottom: 50PX;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+footer p {
+    color: #ffffff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .task-input {
+        flex-direction: column; /* Input aur button ko column me arrange karte hain */
+    }
+
+    button {
+        width: 100%; /* Button ko full width dena small screens ke liye */
+        margin-top: 10px;
+    }
+}

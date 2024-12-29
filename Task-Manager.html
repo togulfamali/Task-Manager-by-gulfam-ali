@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="Task-Manager.css"> <!-- External CSS file link -->
+</head>
+<body>
+  <div class="container">
+    <!-- Toggle Button (Top-right) for Dark/Light Mode -->
+    <div id="toggle-btn" class="toggle-btn"></div>
+
+    <header>
+      <h1>Task Manager</h1> <!-- App ka title -->
+      <p>Your task management app</p> <!-- App ka description -->
+    </header>
+
+    <div class="filters">
+      <!-- Buttons for filtering tasks -->
+      <button id="all-tasks-btn">All Tasks</button> <!-- All tasks dikhane wala button -->
+      <button id="completed-tasks-btn">Completed Tasks</button> <!-- Completed tasks dikhane wala button -->
+    </div>
+
+    <div class="task-container">
+      <div class="task-input">
+        <!-- Input field aur add task button -->
+        <input type="text" id="task-input" placeholder="Enter task here..." autofocus>
+        <button id="add-task-btn">Add Task</button> <!-- Task add karne wala button -->
+      </div>
+
+      <div class="tasks-list">
+        <h2>Your Tasks</h2> <!-- Tasks list ka heading -->
+        <ul id="task-list">
+          <!-- Yahan dynamically tasks dikhaye jayenge -->
+        </ul>
+      </div>
+   </div>
+  </div>
+  <p></p>
+    <footer>
+      <p>Task Manager - Gulfam &copy; 2024</p> <!-- Footer mein copyright text -->
+    </footer>
+
+
+  <script src="Task-Manager.js"></script> <!-- JavaScript file link -->
+</body>
+</html>
